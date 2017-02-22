@@ -1,0 +1,267 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+
+<link rel="import" href="bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="bower_components/app-layout/app-toolbar/app-toolbar.html">
+
+<link rel="import" href="bower_components/app-layout/demo/sample-content.html">
+
+<dom-module id="x-app">
+
+  <template>
+
+    <style>
+
+      a {
+        text-decoration: none;
+        font-size: inherit;
+        color: #fff;
+      }
+      .desc a {
+        text-decoration: none;
+        font-weight: 700;
+        color: #6042ce;
+      }
+
+      .tabs {
+        height: 100%;
+        @apply(--layout-horizontal);
+      }
+
+      .tabs > a {
+        @apply(--layout-vertical);
+        @apply(--layout-center-center);
+        margin: 32px 16px 0px;
+      }
+
+      header {
+        @apply(--layout-vertical);
+        @apply(--layout-center-center);
+        height: calc(100vh - 64px);
+        padding: 0 16px;
+        background-image: url('img/pool-jump.jpg');
+        backgrond-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        text-align: center;
+      }
+
+      header > h2 {
+        font-size: 56px;
+        font-weight: 300;
+        margin: 0;
+      }
+
+      header > p {
+        font-size: 32px;
+      }
+
+      section {
+        padding: 88px 16px;
+      }
+
+      .container {
+        @apply(--layout-horizontal);
+        max-width: 80vw;
+        margin: 0 auto;
+      }
+
+      .container > * {
+        @apply(--layout-flex);
+      }
+
+      .container img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .container h3 {
+        font-size: 32px;
+        font-weight: 300;
+        margin: 24px 0;
+      }
+
+      .container p {
+        line-height: 1.5;
+        font-size: 1.2em;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          @apply(--layout-vertical);
+        }
+      }
+      app-header {
+        --app-header-background-front-layer: {
+          background:rgba(182,48,69,1);};
+      }
+      app-header {
+        --app-header-background-rear-layer: {
+          background:rgba(251,184,41,.95);};
+      }
+
+      [main-title], [condensed-title] {
+        font-family: 'Yellowtail', cursive;
+        color: #fff;
+        font-size: 1.5em;
+        font-weight: 500;
+        padding-left: .5em;
+      }
+      [main-title] {
+        margin-top: .5em;
+        font-size: 2.5em;
+      }
+      h1.mainHeading {
+        font-weight: 400;
+        font-size: 3em;
+      }
+      h2.mainHeading {
+        font-weight: 500;
+        font-size: 2.5em;
+      }
+      h3.mainHeading {
+        font-weight: 300;
+        font-size: 1.8em;
+        color: #333;
+      }
+      .realImage {
+        margin-top: 55px;
+        padding-right: 1em;
+      }
+      .gifWrap {
+        margin-top: 55px;
+        /*width: 25vw;*/
+      }
+    </style>
+
+    <app-header-layout>
+
+      <app-header style="height: 96px;" effects="fade-background resize-title" condenses fixed>
+        <app-toolbar style="height: 64px;">
+          <div condensed-title>blitZ</div>
+          <div class="tabs">
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#checkitout">App</a>
+          </div>
+        </app-toolbar>
+         <app-toolbar style="height: 16px;">
+          <h4 main-title>blitZ</h4>
+        </app-toolbar>
+      </app-header>
+
+      <header>
+        <h2>An app to find events</h2>
+        <p>Get <strong>connected</strong> today</p>
+      </header>
+
+      <section id="about">
+        <div class="container">
+          <div>
+            <img src="img/blitZ-iphone.png">
+          </div>
+          <div style="padding-left: 2vw;" class="desc">
+            <h1 class="mainHeading">About
+              <span style="font-weight: 700; color:rgba(182,48,69,1); font-family: 'Yellowtail', cursive;">
+              blitZ
+            </span>
+            </h1>
+              <p>
+                Blitz a website which allows you to find places to go and things to do in your location
+                or area that cater specifically to your interests.
+                The website is personalized and allows you to create an account, to see what your friends
+                are doing too.
+              </p>
+            <h2 class="mainHeading" style="color:#12b4f3">Founder</h2>
+              <img src="img/ceo-placeholder.jpg" alt="">
+              <p>
+                Samy Jayakrishnan, the founder of the company came up with the idea about 6 months ago.
+                Samy has been taking classical, Indian dancing lessons since she was two years old.
+                With her unique interest, opportunities for her to connect with others in the Indian
+                dancing community had been hard to find. Her business was developed on the
+                idea of helping people with unique interests find things to do and meet people in their community.
+              </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="features">
+        <div class="container">
+          <div class="realImage">
+            <img src="img/food-place.jpeg">
+          </div>
+          <div>
+            <h1 class="mainHeading">Experience the
+              <span style="font-weight: 700; color:rgba(182,48,69,1); font-family: 'Yellowtail', cursive;">
+              blitZ
+            </span> difference
+            </h1>
+            <p>
+              Although many websites can provide customers with a list of events,
+              Blitz gives the customer a different experience than the other websites.
+              Blitz allows for the customer to make an account, and personalize the account.
+              The website allows for the customer to see what events their friends are attending.
+              They can also see what their friends think of the events with reviews, ratings, and comments.
+              Blitz is geared towards helping people with
+              specific interests find something they would want to do, unlike other websites.
+            </p>
+            <h3 class="mainHeading">See your friends' events and find new interests.</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="checkitout">
+        <div class="container">
+          <div class="gifWrap">
+            <img src="img/event.gif" width="68%" style="margin: 0 auto;">
+          </div>
+          <div>
+            <h1 class="mainHeading">Get started with
+              <span style="font-weight: 700; color:rgba(182,48,69,1); font-family: 'Yellowtail', cursive;">
+              blitZ
+            </span>
+            </h1>
+            <p>
+              Blitz is a website that allows for a customer to find events that
+              cater exactly to their interests.  A customer would go on the website and
+              make an account, then personalize this account by entering their interests
+              and talents. The customer would then be provided with a list of events that
+              fit their descriptions.  Once they have clicked on an event a description, a link
+              to buy tickets, friends that are going to the event,
+              and what their friends think of the event will pop up.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </app-header-layout>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'x-app'
+
+    });
+
+  </script>
+
+</dom-module>
