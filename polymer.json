@@ -1,0 +1,8 @@
+{
+  "entrypoint": "index.html",
+  "sources": [
+    "img/**/*",
+    "bower.json",
+    "shared-bundle.html"
+  ]
+}

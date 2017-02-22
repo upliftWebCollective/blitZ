@@ -1,2 +1,8 @@
 .DS_Store
 bower_components
+build
+
+# Firebase configuration
+.firebaserc
+database.rules.json
+firebase.json
